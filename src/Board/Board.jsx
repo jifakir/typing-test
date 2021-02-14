@@ -131,7 +131,7 @@ const Span = styled.span`
 `;
 const Reload = styled.h4`
     width: 100%;
-    cursor: hover;
+    cursor: pointer;
     color: #4F96C3;
 `;
 
