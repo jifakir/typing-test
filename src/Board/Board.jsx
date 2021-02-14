@@ -54,7 +54,7 @@ const Board = () => {
 
     const typedArray = typed.split('').map(el=> el);
 
-    const quoteColor = quote ? quote.content.split('').map((el, fi) => <Span key={fi} colorChange={!typedArray[fi] ? '#4F96C3':el === typedArray[fi]? 'green':'red'} >{el}</Span>) : 'The context is loading...';
+    const quoteColor = quote ? quote.content.split('').map((el, fi) => <Span key={fi} colorChange={!typedArray[fi] ? '#4F96C3':el === typedArray[fi]? 'green':'red'} >{el}</Span>) : null;
     
     const wpm = () => {
         const totalWord = typed.split('').length/5;
@@ -63,11 +63,13 @@ const Board = () => {
     };
     
     const result = (
-        <div>
+        wpm() ? 
+        (<div>
             <h3>You have completed the context.</h3>
             <h3>Your typing speed is <Span colorChange='#61dafb' style={{fontWeight: 600}}>{wpm()}wpm</Span></h3>
-            <Reload onClick={() => reloadPage()}>Reload</Reload>
-        </div>
+            <Reload onClick={() => reloadPage()}>&#x21bb;Reload</Reload>
+        </div>):
+        'The context is loading....'
     );
     return (
         <Main>
