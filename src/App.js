@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import Board from './Board/Board';
 
-function App() {
+
+
+const Body = styled.div`
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #202931;
+  color: grey;
+  font-size: 25px;
+  font-weight: 700;
+`;
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Body>
+      <Board/>
+    </Body>
+  )
 }
 
 export default App;
