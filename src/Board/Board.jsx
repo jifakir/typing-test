@@ -20,6 +20,10 @@ const Board = () => {
     const timerHandler = () => {
         setTime(prev => prev + 1);
     };
+
+    const reloadPage = () => {
+        window.location.reload();
+    }
     useEffect(()=> {
         if(quote.length === typed.length){
             setPressed(false);
@@ -62,6 +66,7 @@ const Board = () => {
         <div>
             <h3>You have completed the context.</h3>
             <h3>Your typing speed is <Span colorChange='#61dafb' style={{fontWeight: 600}}>{wpm()}wpm</Span></h3>
+            <Reload onClick={() => reloadPage()}>Reload</Reload>
         </div>
     );
     return (
@@ -124,6 +129,10 @@ const Span = styled.span`
     color: ${props=>props.colorChange};
     width: ${props=>props.width}px;
 `;
-
+const Reload = styled.h4`
+    width: 100%;
+    cursor: hover;
+    color: #4F96C3;
+`;
 
 export default Board;
